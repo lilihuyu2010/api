@@ -48,7 +48,6 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
-
 $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 $app->register(\Illuminate\Redis\RedisServiceProvider::class);
 
@@ -100,5 +99,9 @@ $app->register(\Illuminate\Redis\RedisServiceProvider::class);
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../routes/web.php';
 });
-
+$app->configureMonologUsing(function(Monolog\Logger $monoLog) use ($app){
+    return $monoLog->pushHandler(
+        new \Monolog\Handler\RotatingFileHandler($app->storagePath().'/logs/lumen.log',5)
+    );
+});
 return $app;
