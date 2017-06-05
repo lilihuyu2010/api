@@ -13,8 +13,7 @@ class BaseApiController extends BaseController
     use Helpers;
     public function __construct(Request $request)
     {
-        apiLog()->debug('##################################################');
-        apiLog()->debug('request route:' . $request->getRequestUri());
+
     }
 
     /**
