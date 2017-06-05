@@ -13,7 +13,7 @@ use App\Http\Controllers\Api\BaseApiController;
 
 class CustomerController extends BaseApiController
 {
-    public function Login()
+    public function Index()
     {
         echo 1;
     }
