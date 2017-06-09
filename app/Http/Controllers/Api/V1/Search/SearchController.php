@@ -6,7 +6,7 @@
  * Time: 16:09
  */
 
-namespace App\Http\Controllers\Api\V1\Customer;
+namespace App\Http\Controllers\Api\V1\Search;
 
 
 use App\Http\Controllers\Api\BaseApiController;
