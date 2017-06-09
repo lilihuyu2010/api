@@ -15,6 +15,7 @@ class CustomerController extends BaseApiController
 {
     public function Index()
     {
-        echo 1;
+        echo "<pre>";
+        print_r($_SERVER);
     }
 }
