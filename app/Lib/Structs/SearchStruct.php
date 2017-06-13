@@ -19,12 +19,12 @@ class SearchStruct extends BaseStruct
         $code = CodeNumEnum::SUCCESS_CODE;
         $data = [];
         //检查时间戳格式
-        if (! $checkStatus = self::checkTimestamp($timestamp)) {
+        if ( $checkStatus = self::checkTimestamp($timestamp)) {
             $code = $checkStatus;
         }
         //如果是命令
-        if (substr($input,0,1) == '!') {
-            if (! $commandResult = CommandStruct::getCommandResult($input)) {
+        if (substr($input,0,1) == '@') {
+            if ( $commandResult = CommandStruct::getCommandResult($input)) {
                 $data = [$commandResult];
                 $code = CodeNumEnum::SYSTEM_COMMAND_CODE;
             }

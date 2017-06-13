@@ -25,7 +25,7 @@ class SearchController extends BaseApiController
         $result = (new SearchStruct())->search($input, $timestamp);
 
         return JsonResponse::create(
-            $result['data'], $result['code']
+            $result['data'], $result['code'],[]
         );
     }
 
