@@ -22,4 +22,14 @@ class NewsModel extends BaseModel
     protected $primaryKey = 'id';
 
     protected static $redisConnection = '';
+
+    public static function getAll($where = [], $limit = 30)
+    {
+        return static::where($where)->limit($limit)->get()->toArray();
+    }
+
+    public static function getOne($where = [])
+    {
+        return static::where($where)->first()->toArray();
+    }
 }
